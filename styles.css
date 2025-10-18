@@ -1,0 +1,336 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, rgba(13, 27, 62, 0.65) 0%, rgba(26, 35, 126, 0.7) 50%, rgba(21, 101, 192, 0.65) 100%),
+                url('logos/icdi.jpg') center/cover no-repeat fixed;
+    padding: 20px;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(40px) saturate(180%);
+    -webkit-backdrop-filter: blur(40px) saturate(180%);
+    border-radius: 24px;
+    padding: 50px 40px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.logo-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.logo {
+    width: 240px;
+    height: auto;
+    background: linear-gradient(135deg, rgba(13, 27, 62, 0.9) 0%, rgba(26, 35, 126, 0.9) 100%);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
+    padding: 30px;
+    border-radius: 24px;
+    box-shadow: 0 8px 32px rgba(13, 27, 62, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.2));
+    animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 35px;
+}
+
+.link-button {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    color: #37474f;
+    text-decoration: none;
+    padding: 18px 24px;
+    border-radius: 16px;
+    font-size: 17px;
+    font-weight: 600;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.link-button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+    transition: left 0.6s;
+}
+
+.link-button:hover::before {
+    left: 100%;
+}
+
+.link-icon-img {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+    flex-shrink: 0;
+    transition: transform 0.3s ease;
+}
+
+.link-button:hover .link-icon-img {
+    transform: scale(1.1) rotate(5deg);
+}
+
+.link-text {
+    flex: 1;
+    text-align: left;
+    font-size: 17px;
+}
+
+/* Globe Icon styling */
+.globe-icon {
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #0d1b3e 0%, #1a237e 100%);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all 0.3s ease;
+    padding: 8px;
+}
+
+.globe-icon svg {
+    width: 100%;
+    height: 100%;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+/* Individual button styles */
+.link-button.website {
+    position: relative;
+}
+
+.link-button.website:hover {
+    background: linear-gradient(135deg, #0d1b3e 0%, #1a237e 100%);
+    color: white;
+    border-color: #0d1b3e;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(13, 27, 62, 0.5);
+}
+
+.link-button.website:hover .globe-icon {
+    background: white;
+    transform: scale(1.1) rotate(5deg);
+}
+
+.link-button.website:hover .globe-icon svg {
+    color: #0d1b3e;
+}
+
+.link-button.facebook:hover {
+    background: linear-gradient(135deg, #1877f2 0%, #42a5f5 100%);
+    color: white;
+    border-color: #1877f2;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(24, 119, 242, 0.3);
+}
+
+.link-button.youtube:hover {
+    background: linear-gradient(135deg, #ff0000 0%, #ff5252 100%);
+    color: white;
+    border-color: #ff0000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(255, 0, 0, 0.3);
+}
+
+.link-button.instagram:hover {
+    background: linear-gradient(135deg, #e4405f 0%, #f77737 100%);
+    color: white;
+    border-color: #e4405f;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(228, 64, 95, 0.3);
+}
+
+.link-button.tiktok:hover {
+    background: linear-gradient(135deg, #000000 0%, #69c9d0 100%);
+    color: white;
+    border-color: #000000;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.link-button:active {
+    transform: translateY(0);
+}
+
+footer {
+    text-align: center;
+    color: rgba(120, 144, 156, 0.9);
+    font-size: 13px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    font-weight: 500;
+}
+
+/* Tablet styles */
+@media (max-width: 768px) {
+    body {
+        padding: 15px;
+    }
+
+    .container {
+        padding: 40px 30px;
+        border-radius: 20px;
+    }
+
+    .logo {
+        width: 200px;
+        padding: 25px;
+    }
+
+    .link-button {
+        padding: 16px 20px;
+        font-size: 16px;
+    }
+
+    .link-icon-img {
+        width: 36px;
+        height: 36px;
+    }
+
+    .globe-icon {
+        width: 36px;
+        height: 36px;
+        padding: 7px;
+    }
+
+    .link-text {
+        font-size: 16px;
+    }
+}
+
+/* Mobile styles */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+    }
+
+    .container {
+        padding: 35px 25px;
+        border-radius: 18px;
+    }
+
+    .logo {
+        width: 180px;
+        padding: 20px;
+    }
+
+    .links {
+        gap: 14px;
+    }
+
+    .link-button {
+        padding: 15px 18px;
+        font-size: 15px;
+        border-radius: 14px;
+        gap: 14px;
+    }
+
+    .link-icon-img {
+        width: 32px;
+        height: 32px;
+    }
+
+    .globe-icon {
+        width: 32px;
+        height: 32px;
+        padding: 6px;
+    }
+
+    .link-text {
+        font-size: 15px;
+    }
+
+    footer {
+        font-size: 12px;
+    }
+}
+
+/* Small mobile styles */
+@media (max-width: 360px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .logo {
+        width: 150px;
+        padding: 15px;
+    }
+
+    .link-button {
+        padding: 14px 16px;
+        font-size: 14px;
+        gap: 12px;
+    }
+
+    .link-icon-img {
+        width: 28px;
+        height: 28px;
+    }
+
+    .globe-icon {
+        width: 28px;
+        height: 28px;
+        padding: 5px;
+    }
+
+    .link-text {
+        font-size: 14px;
+    }
+}
